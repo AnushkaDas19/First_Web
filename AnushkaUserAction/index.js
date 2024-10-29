@@ -33,9 +33,9 @@ const server = new ApolloServer({
 async function startServer() {
   await server.start();
   server.applyMiddleware({ app, path: '/api' });
-  app.listen({ port }, () =>
+  app.listen({ port },'0.0.0.0', () =>
     console.log(
-      `GraphQL Server running at http://localhost:${port}${server.graphqlPath}`
+      `GraphQL Server running at http://0.0.0.0:${port}${server.graphqlPath}`
     )
   );
 }
